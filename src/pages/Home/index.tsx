@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import { Container } from './styles';
 import Loading from '../../components/Loading/index';
+import Task from '../../components/NewTask/index';
 
 const Home: React.FC = () => {
-  const [tasks, setTasks] = useState();
   const [loading, setLoading] = useState(false);
 
   return (!loading ? (
@@ -13,8 +13,9 @@ const Home: React.FC = () => {
         <div className="title">
           <h1>Hi there.</h1>
         </div>
+        <Task />
       </div>
-      {tasks}
+
     </Container>
   ) : <Loading />);
 };
