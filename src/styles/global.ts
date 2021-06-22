@@ -29,4 +29,25 @@ button{
   border:none;
   outline:none;
 }
+.react-modal-overlay{
+background: rgba(24, 24, 32, 0.9);
+position: fixed;
+top:0;
+bottom:0;
+left: 0;
+right: 0;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.react-modal-content{
+  background: #21212B;
+  min-width: 343px;
+  min-height: 597px;
+  border-radius: 20px;
+  padding:10px;
+}
 `;
