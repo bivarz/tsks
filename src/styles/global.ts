@@ -36,7 +36,6 @@ top:0;
 bottom:0;
 left: 0;
 right: 0;
-
 display: flex;
 align-items: center;
 justify-content: center;
@@ -44,10 +43,25 @@ justify-content: center;
 }
 
 .react-modal-content{
+  position: relative;
   background: #21212B;
-  min-width: 343px;
-  min-height: 597px;
+  min-width: 310px;
+  min-height: 497px;
+  max-height: 597px;
   border-radius: 20px;
-  padding:10px;
+  padding:40px 40px;
+
+
+  @media screen and (min-width:600px){
+    min-width: 576px; 
+  }
+}
+
+.react-modal-close{
+  position:absolute;
+  right:1.5rem;
+  top:1.5rem;
+  border:0;
+  background: transparent;
 }
 `;

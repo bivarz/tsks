@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import Vector from '../../assets/Vector.png';
 
 import { Content, Title } from './styles';
 
@@ -18,10 +19,24 @@ const NewTaskModal: React.FC<NewTaskModalProps> = ({ isOpen, onRequestClose }) =
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
+      <button
+        type="button"
+        className="react-modal-close"
+        onClick={onRequestClose}
+      >
+        <img src={Vector} alt="Close Modal" />
+      </button>
       <Title>New Task</Title>
       <Content>
-        <input type="text" placeholder="Title" />
-        <textarea contentEditable={false} className="text-area" placeholder="Description" />
+        <input
+          type="text"
+          placeholder="Title"
+        />
+        <textarea
+          contentEditable={false}
+          className="text-area"
+          placeholder="Description"
+        />
         <button type="button">Save</button>
       </Content>
     </Modal>
