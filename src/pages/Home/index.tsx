@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Container } from './styles';
-import Loading from '../../components/Loading/index';
 
-const Home: React.FC = () => {
-  const [loading, setLoading] = useState(false);
+import TasksList from '../../components/TasksList/index';
 
-  return (!loading ? (
-    <Container>
-      <div className="content">
-        <div className="title">
-          <h1>Hi there.</h1>
-        </div>
+const Home: React.FC = () => (
+  <Container>
+    <div className="content">
+      <div className="title">
+        <h1>Hi there.</h1>
       </div>
-
-    </Container>
-  ) : <Loading />);
-};
+      <TasksList />
+    </div>
+  </Container>
+);
 export default Home;

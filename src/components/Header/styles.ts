@@ -4,9 +4,13 @@ export const Container = styled.nav`
   width:100%;
   background-color: #181820;
   display:flex;
-  justify-content:center; 
-  z-index:1000;   
+  justify-content:center;     
   height:100px;
+  
+  @media(max-width:1024px){
+    position: fixed;
+    top:0; 
+  }
   
 
   .header-content{

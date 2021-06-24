@@ -4,12 +4,14 @@ export const Container = styled.section`
 width:100%;
 display:flex;
 justify-content:center;
-height: 100%;background-color: #181820;
+height: 100%;
+background-color: #181820;
+padding-top: 15px;
 
 .content{
   width:100%;
   max-width: 1120px;
-  margin:10px;
+  margin:18px;
   
 }
 .title{

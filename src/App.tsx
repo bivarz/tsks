@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import Header from './components/Header';
 import Home from './pages/Home';
-import GlobalStyle from './styles/global';
+
 import NewTaskModal from './components/NewTaskModal';
+import { TaskProvider } from './TaskContext/TaskContext';
+import GlobalStyle from './styles/global';
+import Footer from './components/Footer';
 
 Modal.setAppElement('#root');
 
@@ -18,12 +21,13 @@ const App: React.FC = () => {
     setIsNewTaskModalOpen(false);
   }
   return (
-    <>
+    <TaskProvider>
       <GlobalStyle />
       <Header onOpenNewTaskModal={handleOpenNewTaskModal} />
       <Home />
       <NewTaskModal isOpen={isNewTaskModalOpen} onRequestClose={handleCloseNewTaskModal} />
-    </>
+      <Footer />
+    </TaskProvider>
   );
 };
 
