@@ -20,6 +20,7 @@ interface TasksContextData {
   createTask: (task: Task) => void;
   setTasks: (task: Task[]) => void
   changeTaskActive: (id: number) => void;
+  deleteTask: (id: number) => void;
 }
 
 export const TasksContext = createContext<TasksContextData>({} as TasksContextData);
@@ -40,9 +41,14 @@ export const TaskProvider: React.FC<TaskProviderProps> = ({ children }) => {
     setTasks(newTask);
   }
 
+  function deleteTask(id: number) {
+    const restTask = tasks.filter((task) => (task.id !== id));
+    setTasks(restTask);
+  }
+
   return (
     <TasksContext.Provider value={{
-      tasks, setTasks, createTask, changeTaskActive,
+      tasks, setTasks, createTask, changeTaskActive, deleteTask,
     }}
     >
       {children}

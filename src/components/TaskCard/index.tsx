@@ -26,7 +26,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ typeOfTask }) => {
               </button>
               <p>{task.taskTitle}</p>
             </div>
-            <div><OptionButton /></div>
+            <div><OptionButton id={task.id} /></div>
           </div>
           <div className="card-description">{task.taskDescription}</div>
           <div className="card-footer">

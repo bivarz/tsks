@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
+import { TasksContext } from '../../TaskContext/TaskContext';
 
 import { Container, EditContent } from './styles';
 
-const EditOptions: React.FC = () => (
+interface EditOptionsProps {
+  drop: (id: number) => void;
+  id: number;
+}
+
+interface OptionButtonProps {
+  id: number;
+}
+
+const EditOptions: React.FC<EditOptionsProps> = ({ drop, id }) => (
   <div>
     <EditContent>
       <div className="edit-option">
@@ -12,19 +22,20 @@ const EditOptions: React.FC = () => (
         </button>
       </div>
       <div className="delete-option">
-        <button type="button">
+        <button type="button" onClick={() => drop(id)}>
           <AiOutlineDelete color="#272733" size={25} />
         </button>
       </div>
     </EditContent>
   </div>
 );
-const OptionButton: React.FC = () => {
+const OptionButton: React.FC<OptionButtonProps> = ({ id }) => {
+  const { deleteTask } = useContext(TasksContext);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Container>
-      {isOpen ? <EditOptions /> : ''}
+      {isOpen ? <EditOptions drop={deleteTask} id={id} /> : ''}
       <button type="button" className="button" onClick={() => setIsOpen(!isOpen)}>
         <p className="dots">...</p>
       </button>
