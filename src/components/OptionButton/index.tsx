@@ -25,7 +25,7 @@ const OptionButton: React.FC = () => {
   return (
     <Container>
       {isOpen ? <EditOptions /> : ''}
-      <button type="button" className="button" onClick={() => setIsOpen(true)}>
+      <button type="button" className="button" onClick={() => setIsOpen(!isOpen)}>
         <p className="dots">...</p>
       </button>
     </Container>
