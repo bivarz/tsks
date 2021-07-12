@@ -39,8 +39,7 @@ export const Card = styled.div`
 .dots{
   color:#AC6DDE;
   font-size: 30px;
-  margin-bottom:10px;
-  
+  margin-bottom:10px;  
 }
 .card-description{
   height: 147px;  
