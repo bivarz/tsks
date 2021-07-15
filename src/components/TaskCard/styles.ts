@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.article`
   margin-top:35px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   color:#F5F5F6;
   font-size:16px;
   font-family: "inter",-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
@@ -68,13 +68,27 @@ interface CircleVectorProps {
 }
 
 export const CircleVector = styled.span<CircleVectorProps>`
-
+    position: relative;
     width: 30px;
     height:30px;
     display:block;
     border-radius: 50%;
     border:${(props) => (props.isActive ? '3px dotted #AC6DDE' : '3px solid #AC6DDE')}; 
-    
 
-  
+    :hover:after{
+      animation:fadeIn 1s;     
+      content:${(props) => (props.isActive ? "'Open'" : "'Close'")}; 
+      font-family: "inter",-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+      font-size:12px;
+      color:#AC6DDE;
+      position:absolute;
+      left:-2px;
+      top:30px;
+
+    }    
+
+    @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 `;

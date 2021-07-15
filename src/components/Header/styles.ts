@@ -5,7 +5,7 @@ export const Container = styled.nav`
   background-color: #181820;
   display:flex;
   justify-content:center;     
-  height:100px;
+  height:80px;
   
   @media(max-width:1024px){
     position: fixed;

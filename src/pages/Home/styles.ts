@@ -6,7 +6,7 @@ display:flex;
 justify-content:center;
 height: 100%;
 background-color: #181820;
-padding-top: 15px;
+margin-top:-10px;
 
 .content{
   width:100%;
